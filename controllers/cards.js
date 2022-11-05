@@ -24,7 +24,7 @@ module.exports.createCard = (req, res) => {
 module.exports.deleteCard = (req, res) =>
   Card.findByIdAndDelete(req.params.cardId)
     .orFail(() => {
-      const error = new Error("No card found with that id");
+      const error = new Error("Ninguna tarjeta encontrada con ese id");
       error.statusCode = 404;
       throw error;
     })
@@ -45,7 +45,7 @@ module.exports.likeCard = (req, res) =>
     { new: true }
   )
     .orFail(() => {
-      const error = new Error("No card found with that id");
+      const error = new Error("Ninguna tarjeta encontrada con ese id");
       error.statusCode = 404;
       throw error;
     })
@@ -66,7 +66,7 @@ module.exports.dislikeCard = (req, res) =>
     { new: true }
   )
     .orFail(() => {
-      const error = new Error("No card found with that id");
+      const error = new Error("Ninguna tarjeta encontrada con ese id");
       error.statusCode = 404;
       throw error;
     })

@@ -8,7 +8,7 @@ module.exports.getUsers = (req, res) =>
 module.exports.getUserById = (req, res) =>
   User.findById(req.params.id)
     .orFail(() => {
-      const error = new Error("No user found with that id");
+      const error = new Error("Ningún usuario encontrado con ese id");
       error.statusCode = 404;
       throw error;
     })

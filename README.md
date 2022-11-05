@@ -6,6 +6,13 @@ This project is a back end for the Arount the U.S. app. It's built using Node.js
 It's a work in progress, but for now it has the following features:
 
 - routes for users and cards
+- controllers for users and cards
+- models for users and cards
+- connection to a MongoDB database
+
+## Future Features
+
+- Add authentication and authorization
 
 ## Directories
 

@@ -12,12 +12,20 @@ moongose
 const usersRouter = require("./routes/users");
 const cardRouter = require("./routes/cards");
 
-app.use("/", cardRouter);
+app.use("/cards", cardRouter);
 app.use("/users", usersRouter);
 
 // set route for Non-existent address or localhost:3000
 app.use("/", (req, res) => {
   res.status(404).send({ message: "Recurso solicitado no encontrado" });
+});
+
+app.use((req, res, next) => {
+  req.user = {
+    _id: "6365a4f7bd579f1842394cc2", // pega el _id del usuario de prueba que creamos en el paso anterior
+  };
+
+  next();
 });
 
 app.listen(PORT, () => {

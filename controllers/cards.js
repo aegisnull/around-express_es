@@ -6,6 +6,7 @@ module.exports.getCards = (req, res) =>
     .catch((err) => res.status(500).send({ message: `Error: ${err}` }));
 
 module.exports.createCard = (req, res) => {
+  console.log(req.user._id); // _id se volverá accesible
   const { name, link } = req.body;
 
   Card.create({ name, link, owner: req.user._id })

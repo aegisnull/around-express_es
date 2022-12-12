@@ -3,7 +3,7 @@ const User = require("../models/user");
 module.exports.getUsers = (req, res) =>
   User.find({})
     .then((users) => res.send({ data: users }))
-    .catch((err) => res.status(500).send({ message: `Error: ${err}` }));
+    .catch((err) => res.status(500).send({ message: `Algo salió mal` }));
 
 module.exports.getUserById = (req, res) =>
   User.findById(req.params.id)
@@ -19,7 +19,7 @@ module.exports.getUserById = (req, res) =>
       } else {
         res.status(500);
       }
-      res.send({ message: `Error: ${err}` });
+      res.status(500).send({ message: `Algo salió mal` });
     });
 
 module.exports.createUser = (req, res) => {
@@ -33,7 +33,7 @@ module.exports.createUser = (req, res) => {
       } else {
         res.status(500);
       }
-      res.send({ message: `Error: ${err}` });
+      res.status(500).send({ message: `Algo salió mal` });
     });
 };
 
@@ -49,7 +49,7 @@ module.exports.updateProfile = (req, res) => {
       } else {
         res.status(500);
       }
-      res.send({ message: `Error: ${err}` });
+      res.status(500).send({ message: `Algo salió mal` });
     });
 };
 
@@ -65,6 +65,6 @@ module.exports.updateAvatar = (req, res) => {
       } else {
         res.status(500);
       }
-      res.send({ message: `Error: ${err}` });
+      res.status(500).send({ message: `Algo salió mal` });
     });
 };

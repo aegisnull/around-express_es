@@ -1,6 +1,6 @@
 {
   "name": "around-express_es",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "`/data` — JSON files to temporarily emulate database integration.",
   "main": "app.js",
   "scripts": {

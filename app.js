@@ -3,6 +3,10 @@ const moongose = require("mongoose");
 
 const { PORT = 3000 } = process.env;
 const app = express();
+//express.json() is a method inbuilt in express to recognize the incoming Request Object as a JSON Object.
+app.use(express.json());
+//urlencoded() method within express. This method is called as a middleware in your application using the code: app.use(express.urlencoded());
+app.use(express.urlencoded({ extended: true }));
 
 app.use((req, res, next) => {
   req.user = {

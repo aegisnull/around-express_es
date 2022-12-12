@@ -3,7 +3,7 @@ const Card = require("../models/card");
 module.exports.getCards = (req, res) =>
   Card.find({})
     .then((cards) => res.send({ data: cards }))
-    .catch((err) => res.status(500).send({ message: `Error: ${err}` }));
+    .catch((err) => res.status(500).send({ message: `Algo salió mal` }));
 
 module.exports.createCard = (req, res) => {
   console.log(req.user._id); // _id se volverá accesible
@@ -17,7 +17,7 @@ module.exports.createCard = (req, res) => {
       } else {
         res.status(500);
       }
-      res.send({ message: `Error: ${err}` });
+      res.status(500).send({ message: `Algo salió mal` });
     });
 };
 
@@ -35,7 +35,7 @@ module.exports.deleteCard = (req, res) =>
       } else {
         res.status(500);
       }
-      res.send({ message: `Error: ${err}` });
+      res.status(500).send({ message: `Algo salió mal` });
     });
 
 module.exports.likeCard = (req, res) =>
@@ -56,7 +56,7 @@ module.exports.likeCard = (req, res) =>
       } else {
         res.status(500);
       }
-      res.send({ message: `Error: ${err}` });
+      res.status(500).send({ message: `Algo salió mal` });
     });
 
 module.exports.dislikeCard = (req, res) =>
@@ -77,5 +77,5 @@ module.exports.dislikeCard = (req, res) =>
       } else {
         res.status(500);
       }
-      res.send({ message: `Error: ${err}` });
+      res.status(500).send({ message: `Algo salió mal` });
     });
